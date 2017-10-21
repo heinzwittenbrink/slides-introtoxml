@@ -12,46 +12,24 @@
 - [W3C-Standard](https://www.w3.org/standards/xml/ "XML Technology - W3C")
 - Basis für eine Familie von weiteren Standards und Technologien
 
-## XML-Syntax
-- Spitzklammern unterscheiden Markup und Textinhalt
-- Wichtigste syntaktische Features: Elemente, Attribute, Kommentare
-- Wohlgeformtes XML folgt syntaktischen Regeln: Elemente sind geschlossen und ineinander eingebettet, Attribute haben Werte in Anführungsstrichen, Groß und Kleinschreibung sind bedeutungsunterscheidend
-- Valides XML entspricht einem definierten Dokumenttyp
 
-## Beispiel für ein XML-Dokument
+## Spezifikationen
+- Aktuelle Spezifikation: [Extensible Markup Language (XML) 1.0 (Fifth Edition)](https://www.w3.org/TR/xml/ "Extensible Markup Language (XML) 1.0 (Fifth Edition)")[@paoli2008]
+- Viele weitere Spezifikationen
 
-```
-<?xml version="1.0"?>
-<!-- dictionary.xml
- - Copyright (c) 2014, HerongYang.com, All Rights Reserved.
--->
-<dictionary>
- <word acronym="true">
-  <name>XML</name>
-  <definition reference="Herong&apos;s Notes">eXtensible Markup
-Language.</definition>
-  <update date="2002-12-23"/>
- </word>
- <word symbol="true">
-  <name>&lt;</name>
-  <definition>Mathematical symbol representing the "less than" logical
-operation, like: 1&lt;2.</definition>
-  <definition>Reserved symbol in XML to representing the beginning of
-tags, like: <![CDATA[<p>Hello world!</p>]]>
-  </definition>
-</word>
-</dictionary>
-```
 
-- XML-Deklaration
-- Kommentar
-- Dokument-Element oder Wurzelelement
-- Element mit Attribut
-- Entitiy
-- Leeres Element
-- CDATA-Abschnitt
-- Ende des Wurzelelements
-- Weitere Beispiele: [Sample XML File (books.xml)](https://msdn.microsoft.com/en-us/library/ms762271(v=vs.85).aspx "Sample XML File (books.xml)"), [A List Apart: Using XML : Sample XML Document](https://alistapart.com/d/usingxml/xml_uses_a.html "A List Apart: Using XML : Sample XML Document")
+## Einsatzbereiche
+
+- Publishing und Management von Dokumenten:  Inhaltliches Strukturieren und flexible Darstellung
+- Web-Services. Austauschformaten für die verteilte Bearbeitung im Internet.
+
+
+## Dokumentorientierung und Datenorientierung
+
+- Dokumentorientierung: Meist semistrukturierte Dokumente für menschliche Adressaten
+- Datenorientierung: Hochstrukturierte Daten für eindeutige Weiterverarbeitung
+
+
 
 ## XML: Wichtige Eigenschaften und Begriffe
 - Dokumente bestehen aus ineinander eingebetteten Elementen. Sie sind “Bäume” (Beispiel für Tree-View: [XML Online Parser and Viewer](http://countwordsfree.com/xmlviewer "XML Online Parser and Viewer"))
@@ -89,13 +67,15 @@ Scalable Vector Graphics SVG (https://www.w3.org/Graphics/SVG/)
 - XML-Sitemaps
 - Epub (http://idpf.org/epub)
 
+
 ## Beispiel: SVG
 
-![SVG-Beispiel aus der Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Beispiel-SVG.svg/800px-Beispiel-SVG.svg.png)
+![SVG-Beispiel aus der Wikipedia](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Beispiel-SVG.svg/800px-Beispiel-SVG.svg.png){width=50%}
 
-Quelltext:
-```
 
+## SVG-Quelltext:
+
+```XML
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">  
@@ -112,14 +92,15 @@ Quelltext:
 ```
 
 ## XML-Vokabulare für strukturierte Dokumentation
-- DocBook (http://www.docbook.org/)und DITA (http://dita.xml.org/) sind  wichtige Formate für das Single Source Publishing
+
+- DocBook (<http://www.docbook.org/>) und DITA (<http://dita.xml.org/>) sind  wichtige Formate für das Single Source Publishing
 - DocBook wurde als buchorientierter Dokumenttyp entwickelt
 - DITA ist eine Topic-orientierte Alternative, die sich am Prinzip des didaktischen Minimalismus orientiert
 
 ## Office-Formate
 - Microsoft Office und Libre Office/Open Office verwenden XML als natives Format
-- Office Open XML ist ein (umstrittener) ECMA-Standard (http://www.ecma-international.org/publications/standards/Ecma-376.htm)
-- Das Open Document Format (https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office) ist XML basiert und ein OASIS-Standard
+- Office Open XML ist ein (umstrittener) ECMA-Standard (<http://www.ecma-international.org/publications/standards/Ecma-376.htm>)
+- Das Open Document Format (<https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office>) ist XML basiert und ein OASIS-Standard
 - Libre Office unterstützt auch DocBook
 
 ## Entwicklung der Markup-Sprachen
@@ -154,18 +135,187 @@ Für die seitenorientierte Ausgabe wurde XSL-FO entwickelt
 - [data2type GmbH: XML-Technologien | Nachschlagewerk](https://www.data2type.de/xml-xslt-xslfo/ "data2type GmbH: XML-Technologien | Nachschlagewerk")
 - [xml \@ZVON.org](http://zvon.org/comp/m/xml.html "xml @ZVON.org")
 
+# XML-Syntax
+
+## XML-Syntax
+- Spitzklammern unterscheiden Markup und Textinhalt
+- Wichtigste syntaktische Features: Elemente, Attribute, Kommentare
+- Wohlgeformtes XML folgt syntaktischen Regeln: Elemente sind geschlossen und ineinander eingebettet, Attribute haben Werte in Anführungsstrichen, Groß und Kleinschreibung sind bedeutungsunterscheidend
+- Valides XML entspricht einem definierten Dokumenttyp
+
+## Beispiel für ein XML-Dokument
+
+```xml
+<?xml version="1.0"?>
+<!-- dictionary.xml
+ - Copyright (c) 2014, HerongYang.com, All Rights Reserved.
+-->
+<dictionary>
+ <word acronym="true">
+  <name>XML</name>
+  <definition reference="Herong&apos;s Notes">eXtensible Markup
+Language.</definition>
+  <update date="2002-12-23"/>
+ </word>
+ <word symbol="true">
+  <name>&lt;</name>
+  <definition>Mathematical symbol representing the "less than" logical
+operation, like: 1&lt;2.</definition>
+  <definition>Reserved symbol in XML to representing the beginning of
+tags, like: <![CDATA[<p>Hello world!</p>]]>
+  </definition>
+</word>
+</dictionary>
+```
+
+## XML-Deklaration
+
+
+```xml
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+```
+
+- Steht am Beginn eines Dokuments, gibt die XML-Version an.
+- Optional: Angabe des Encoding (der Zeichenkodierung)
+- Optional: Angabe der Referenzierung einer externen Dokumenttyp-Deklaration (DTD)
+
+## Kommentare
+
+```xml
+<!-- dictionary.xml
+ - Copyright (c) 2014, HerongYang.com, All Rights Reserved.
+-->
+```
+
+- Enthalten Botschaften für menschliche Nutzer
+- Werden von der XML verarbeitenden Software nicht verwendet
+
+
+## Dokument-Element oder Wurzelelement
+
+```xml
+<dictionary>
+.
+.
+.
+</dictionary>
+```
+
+- Jedes XML-Dokument hat ein und nur ein Wurzelelement
+- Ohne Wurzelelement könnte keine Baumstruktur aufgebaut werden
+
+## Element mit Attribut
+
+```xml
+<word acronym="true">
+.
+.
+.
+</word>
+```
+
+- Elemente und Attribute sind die wichtigsten syntaktischen Bestandteile von XML-Dokumenten
+- Elemente können einen Inhalt haben, Attribute haben einen *Wert*
+- Bei Elementen ist die Reihenfolge relevant, bei Attributen nicht
+
+
+## Elemente
+
+```xml
+<name>XML</name>
+.
+.
+.
+<update date="2002-12-23"/>
+```
+
+- Start und End-Tag
+- Elementnamen
+- Leere Elememente
+
+## Attribute
+
+```xml
+<update date="2002-12-23"/>
+```
+
+- Attributnamen und Attributwert
+- Werte sind immer in Anführungszeichen eingeschlossen
+- Reihenfolge der Element ist nicht relevant
+
+## Leeres Elemente
+
+```xml
+<update date="2002-12-23"/>
+```
+
+- Verkürzte Syntax: Schrägstich vor der schließenden Spitzkammer
+
+## Entites
+
+```xml
+Herong&apos;s Notes">...
+
+..., like: 1&lt;2
+
+```
+
+- Für Sonderzeichen
+- Zur Darstellung von Zeichen, die sonst als Markup interpretiert würden
+
+
+## CDATA-Abschnitte
+
+```xml
+<definition>Reserved symbol in XML to representing the beginning of
+tags, like: <![CDATA[<p>Hello world!</p>]]>
+  </definition>
+```
+
+- Für Abschnitte, die nicht als Markup interpretiert werden sollen.
+- Beispiel: HTML innerhalb von RSS-Dokumenten
+
+
+## Weitere Beispiele
+
+
+- [A List Apart: Using XML : Sample XML Document](https://alistapart.com/d/usingxml/xml_uses_a.html "A List Apart: Using XML : Sample XML Document")
+
+- [Sample XML File (books.xml)](https://msdn.microsoft.com/en-us/library/ms762271(v=vs.85) "Sample XML File (books.xml)")
+
+
 # XML als Text editieren
 
 ## Texteditoren
 
+Online: [Online XML Editor](https://www.tutorialspoint.com/online_xml_editor.htm "Online XML Editor")
+
 ## Encoding
+
+- Darstellung von characters durch bits and bytes
+- ASCII and friens: 1 character - 1 bit
+- Unicode: 1 Zahlenwert pro Character in jedem Schriftsystem
+- Unicode-Encodings: Umsetzung der Zahlenwerte in Bytes
+
+
 
 ## Syntax Highlighting
 
-## Validierende Editore
+## Validierende Editoren
+![Completion mit dem nxml-mode des Emacs](pics/nxmlmode-completion.png){ width=80% }
+
+(Befehl: `C-M-i`)
+
 
 ## Online Tools
 
+[W3C XML Schema (XSD) Validation online](http://www.utilities-online.info/xsdvalidation/#.WenM6hN-qRs "W3C XML Schema (XSD) Validation online")
+
+[Free Online XML Validator (RelaxNG)](https://www.liquid-technologies.com/online-relaxng-validator "Free Online XML Validator (RelaxNG)")
+
+[XSLT (eXtensible Stylesheet Language Transformations) online transformations](http://www.utilities-online.info/xsltransformation/#.WenPLRN-qRs "XSLT (eXtensible Stylesheet Language Transformations) online transformations")
 
 
+# Material
 
+## Literatur
