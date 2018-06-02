@@ -85,7 +85,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Content Strategy and Enterprise Content Management</li>
 </ul>
 </section></section>
-<section><section id="xml-is-20" class="titleslide slide level1"><h1>XML is 20</h1></section><section id="section" class="slide level2" data-background="http://gotocon.com/dl/2010/Web/JAOOForside_Pic/forside11.png" data-background-size="contain">
+<section><section id="xml-is-20" class="titleslide slide level1"><h1>&quot;XML is 20&quot;</h1></section><section id="section" class="slide level2" data-background="http://gotocon.com/dl/2010/Web/JAOOForside_Pic/forside11.png" data-background-size="contain">
 <h2></h2>
 <p class="rights">
 Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
@@ -114,28 +114,40 @@ Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
 <p>Now, the mirror image of that statement is that you can treat data records as documents. People did a lot of that with XML just because there was no other alternative… and in fact we have done better, for weak values of “better”. I wonder if we’ll ever do better still? As the editor of the IETF JSON RFCs, I’m a pessimist.</p>
 </blockquote>
 <p>Tim Bray: <a href="https://www.xml.com/articles/2018/02/10/xml-20/">XML is 20</a></p>
+</section><section class="slide level2">
+
+<p><a href="https://www.predic8.de/xml-json-yaml.htm">XML, JSON und YAML im Vergleich</a></p>
+</section><section class="slide level2">
+
+<ul>
+<li>General topic: Formats for structured information</li>
+<li>Alternatives: XML, HTML, JSON, YAML ... (and mixtures)</li>
+<li>In this course we will focus on the formats</li>
+</ul>
+</section><section class="slide level2">
+
 </section></section>
-<section><section id="was-ist-xml" class="titleslide slide level1"><h1>Was ist XML?</h1></section><section id="xml-basics" class="slide level2">
+<section><section id="what-is-xml" class="titleslide slide level1"><h1>What is XML?</h1></section><section id="xml-basics" class="slide level2">
 <h2>XML-Basics</h2>
 <ul>
 <li>XML: Extensible Markup Language</li>
-<li>Weiterentwicklung von <a href="https://www.w3.org/MarkUp/SGML/" title="Overview of SGML Resources">SGML</a></li>
-<li>Lange als Alternative zu HTML verstanden</li>
-<li>Syntax für XML-Vokabulare (Metasprache)</li>
+<li>Buidling on <a href="https://www.w3.org/MarkUp/SGML/" title="Overview of SGML Resources">SGML</a></li>
+<li>Often understood as an alternative to HTML</li>
+<li>Syntax for XML-Vocabularies (Metalanguage)</li>
 <li><a href="https://www.w3.org/standards/xml/" title="XML Technology - W3C">W3C-Standard</a></li>
 <li>Basis für eine Familie von weiteren Standards und Technologien</li>
 </ul>
-</section><section id="spezifikationen" class="slide level2">
-<h2>Spezifikationen</h2>
+</section><section id="specifications" class="slide level2">
+<h2>Specifications</h2>
 <ul>
-<li>Aktuelle Spezifikation: <a href="https://www.w3.org/TR/xml/" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a><span class="citation" data-cites="paoli2008">(Paoli, Bray, Sperberg-McQueen, Yergeau, &amp; Maler, <a href="#/ref-paoli2008">2008</a>)</span></li>
-<li>Viele weitere Spezifikationen</li>
+<li>Most recent specification: <a href="https://www.w3.org/TR/xml/" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a><span class="citation" data-cites="paoli2008">(Paoli, Bray, Sperberg-McQueen, Yergeau, &amp; Maler, <a href="#/ref-paoli2008">2008</a>)</span></li>
+<li>Many other specifications</li>
 </ul>
 </section><section id="einsatzbereiche" class="slide level2">
 <h2>Einsatzbereiche</h2>
 <ul>
-<li>Publishing und Management von Dokumenten: Inhaltliches Strukturieren und flexible Darstellung</li>
-<li>Web-Services. Austauschformaten für die verteilte Bearbeitung im Internet.</li>
+<li>Publishing and management of documents: Structuring of the content and flexible representatiob</li>
+<li>Web-Services. Exchange format for the distributed processing of documents</li>
 </ul>
 </section><section id="dokumentorientierung-und-datenorientierung" class="slide level2">
 <h2>Dokumentorientierung und Datenorientierung</h2>
@@ -171,7 +183,7 @@ Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
 </section><section id="unterschiede-xml-und-html" class="slide level2">
 <h2>Unterschiede XML und HTML</h2>
 <ul>
-<li>XML ist case-sensitive, HTML nicht</li>
+<li>XML is case-sensitive, HTML not</li>
 <li>XML-Elemente müssen geschlossen sein, HTML-Elemente nicht</li>
 <li>XML-Attribute müssen einen Namen und einen Wert haben</li>
 <li>Die Dokumenttyp-Deklaration unterscheidet sich, siehe https://www.w3.org/QA/2002/04/valid-dtd-list.html</li>
@@ -206,23 +218,23 @@ Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
  <span class="kw">&lt;rect</span><span class="ot"> x=</span><span class="st">&quot;80&quot;</span><span class="ot"> y=</span><span class="st">&quot;160&quot;</span><span class="ot"> width=</span><span class="st">&quot;240&quot;</span><span class="ot"> height=</span><span class="st">&quot;80&quot;</span><span class="ot"> fill=</span><span class="st">&quot;red&quot;</span> <span class="kw">/&gt;</span>
  <span class="kw">&lt;text</span><span class="ot"> x=</span><span class="st">&quot;200&quot;</span><span class="ot"> y=</span><span class="st">&quot;220&quot;</span><span class="kw">&gt;</span>Arzt<span class="kw">&lt;/text&gt;</span>
 <span class="kw">&lt;/svg&gt;</span></code></pre></div>
-</section><section id="xml-vokabulare-für-strukturierte-dokumentation" class="slide level2">
-<h2>XML-Vokabulare für strukturierte Dokumentation</h2>
+</section><section id="xml-vocabularies-for-structures-documentation" class="slide level2">
+<h2>XML vocabularies for structures documentation</h2>
 <ul>
 <li>DocBook (<a href="http://www.docbook.org/" class="uri">http://www.docbook.org/</a>) und DITA (<a href="http://dita.xml.org/" class="uri">http://dita.xml.org/</a>) sind wichtige Formate für das Single Source Publishing</li>
 <li>DocBook wurde als buchorientierter Dokumenttyp entwickelt</li>
 <li>DITA ist eine Topic-orientierte Alternative, die sich am Prinzip des didaktischen Minimalismus orientiert</li>
 </ul>
-</section><section id="office-formate" class="slide level2">
-<h2>Office-Formate</h2>
+</section><section id="xml-for-office-documents" class="slide level2">
+<h2>XML for office documents</h2>
 <ul>
 <li>Microsoft Office und Libre Office/Open Office verwenden XML als natives Format</li>
 <li>Office Open XML ist ein (umstrittener) ECMA-Standard (<a href="http://www.ecma-international.org/publications/standards/Ecma-376.htm" class="uri">http://www.ecma-international.org/publications/standards/Ecma-376.htm</a>)</li>
 <li>Das Open Document Format (<a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office" class="uri">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office</a>) ist XML basiert und ein OASIS-Standard</li>
 <li>Libre Office unterstützt auch DocBook</li>
 </ul>
-</section><section id="entwicklung-der-markup-sprachen" class="slide level2">
-<h2>Entwicklung der Markup-Sprachen</h2>
+</section><section id="history-of-markup-languages" class="slide level2">
+<h2>History of markup languages</h2>
 <ul>
 <li>Basis: SGML, bereits seit den 1960er Jahren entwickelt</li>
 <li>HTML wurde als SGML-Anwendung entwickelt</li>
@@ -230,8 +242,8 @@ Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
 <li>HTML5 setzte sich gegen XHTML als lebender HTML-Standard durch.</li>
 <li>Parallel etablierte sich JSON als einfaches Format für den Datenaustausch im Web</li>
 </ul>
-</section><section id="transformation-und-präsentation-von-xml" class="slide level2">
-<h2>Transformation und Präsentation von XML</h2>
+</section><section id="transformation-and-presentation-of-xml" class="slide level2">
+<h2>Transformation and presentation of XML</h2>
 <ul>
 <li>XML erlaubt eine strikte Trennung von Inhalt und Präsentation</li>
 <li>XML-Dokumente werden meist mit XSLT in andere XML-Vokabulare oder HTML überführt</li>
@@ -254,8 +266,8 @@ Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
 <li>Mit RDFa können RDF-Daten in HTML-Dokumente eingebettet werden</li>
 <li>Das von Facebook entwickelte Open Graph Protocol (http://ogp.me/) basiert auf RDFa</li>
 </ul>
-</section><section id="ressourcen" class="slide level2">
-<h2>Ressourcen</h2>
+</section><section id="ressources" class="slide level2">
+<h2>Ressources</h2>
 <ul>
 <li><a href="https://www.w3.org/XML/" title="Extensible Markup Language (XML)">Extensible Markup Language (XML)</a></li>
 <li><a href="https://www.xml.com/" title="XML.com">XML.com</a></li>
@@ -263,16 +275,16 @@ Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
 <li><a href="http://zvon.org/comp/m/xml.html" title="xml @ZVON.org">xml @ZVON.org</a></li>
 </ul>
 </section></section>
-<section><section id="xml-syntax" class="titleslide slide level1"><h1>XML-Syntax</h1></section><section id="xml-syntax-1" class="slide level2">
-<h2>XML-Syntax</h2>
+<section><section id="xml-syntax" class="titleslide slide level1"><h1>XML syntax</h1></section><section id="xml-syntax-1" class="slide level2">
+<h2>XML syntax</h2>
 <ul>
 <li>Spitzklammern unterscheiden Markup und Textinhalt</li>
 <li>Wichtigste syntaktische Features: Elemente, Attribute, Kommentare</li>
 <li>Wohlgeformtes XML folgt syntaktischen Regeln: Elemente sind geschlossen und ineinander eingebettet, Attribute haben Werte in Anführungsstrichen, Groß und Kleinschreibung sind bedeutungsunterscheidend</li>
 <li>Valides XML entspricht einem definierten Dokumenttyp</li>
 </ul>
-</section><section id="beispiel-für-ein-xml-dokument" class="slide level2">
-<h2>Beispiel für ein XML-Dokument</h2>
+</section><section id="example-of-an-xml-document" class="slide level2">
+<h2>Example of an XML document</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot;<span class="kw">?&gt;</span>
 <span class="co">&lt;!-- dictionary.xml</span>
 <span class="co"> - Copyright (c) 2014, HerongYang.com, All Rights Reserved.</span>
@@ -301,8 +313,8 @@ tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<
 <li>Optional: Angabe des Encoding (der Zeichenkodierung)</li>
 <li>Optional: Angabe der Referenzierung einer externen Dokumenttyp-Deklaration (DTD)</li>
 </ul>
-</section><section id="kommentare" class="slide level2">
-<h2>Kommentare</h2>
+</section><section id="comments" class="slide level2">
+<h2>Comments</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="co">&lt;!-- dictionary.xml</span>
 <span class="co"> - Copyright (c) 2014, HerongYang.com, All Rights Reserved.</span>
 <span class="co">--&gt;</span></code></pre></div>
@@ -310,8 +322,8 @@ tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<
 <li>Enthalten Botschaften für menschliche Nutzer</li>
 <li>Werden von der XML verarbeitenden Software nicht verwendet</li>
 </ul>
-</section><section id="dokument-element-oder-wurzelelement" class="slide level2">
-<h2>Dokument-Element oder Wurzelelement</h2>
+</section><section id="dokument-element-or-root-elelement" class="slide level2">
+<h2>Dokument element or root elelement</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;dictionary&gt;</span>
 .
 .
@@ -321,8 +333,8 @@ tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<
 <li>Jedes XML-Dokument hat ein und nur ein Wurzelelement</li>
 <li>Ohne Wurzelelement könnte keine Baumstruktur aufgebaut werden</li>
 </ul>
-</section><section id="element-mit-attribut" class="slide level2">
-<h2>Element mit Attribut</h2>
+</section><section id="element-with-attribute" class="slide level2">
+<h2>Element with attribute</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;word</span><span class="ot"> acronym=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>
 .
 .
@@ -333,8 +345,8 @@ tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<
 <li>Elemente können einen Inhalt haben, Attribute haben einen <em>Wert</em></li>
 <li>Bei Elementen ist die Reihenfolge relevant, bei Attributen nicht</li>
 </ul>
-</section><section id="elemente" class="slide level2">
-<h2>Elemente</h2>
+</section><section id="elements" class="slide level2">
+<h2>Elements</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;name&gt;</span>XML<span class="kw">&lt;/name&gt;</span>
 .
 .
@@ -345,62 +357,62 @@ tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<
 <li>Elementnamen</li>
 <li>Leere Elememente</li>
 </ul>
-</section><section id="attribute" class="slide level2">
-<h2>Attribute</h2>
+</section><section id="attributes" class="slide level2">
+<h2>Attributes</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></code></pre></div>
 <ul>
-<li>Attributnamen und Attributwert</li>
-<li>Werte sind immer in Anführungszeichen eingeschlossen</li>
-<li>Reihenfolge der Element ist nicht relevant</li>
+<li>Attribute names and attribute values</li>
+<li>Values must always be in quotation markes</li>
+<li>Order of the elements is not relevant</li>
 </ul>
 </section><section id="leeres-elemente" class="slide level2">
 <h2>Leeres Elemente</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></code></pre></div>
 <ul>
-<li>Verkürzte Syntax: Schrägstich vor der schließenden Spitzkammer</li>
+<li>Abbreviated Syntax: Slash before the closing bracket</li>
 </ul>
-</section><section id="entites" class="slide level2">
-<h2>Entites</h2>
+</section><section id="entities" class="slide level2">
+<h2>Entities</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml">Herong<span class="dv">&amp;apos;</span>s Notes&quot;&gt;...
 
 ..., like: 1<span class="dv">&amp;lt;</span>2</code></pre></div>
 <ul>
-<li>Für Sonderzeichen</li>
-<li>Zur Darstellung von Zeichen, die sonst als Markup interpretiert würden</li>
+<li>For special characters</li>
+<li>For the escaping of characters which would be parsed as markup otherwise</li>
 </ul>
-</section><section id="cdata-abschnitte" class="slide level2">
-<h2>CDATA-Abschnitte</h2>
+</section><section id="cdata-sections" class="slide level2">
+<h2>CDATA sections</h2>
 <div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;definition&gt;</span>Reserved symbol in XML to representing the beginning of
 tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<span class="bn">]]&gt;</span>
   <span class="kw">&lt;/definition&gt;</span></code></pre></div>
 <ul>
-<li>Für Abschnitte, die nicht als Markup interpretiert werden sollen.</li>
-<li>Beispiel: HTML innerhalb von RSS-Dokumenten</li>
+<li>For sections with must not be parsed as markup</li>
+<li>Exampe: HTML in RSS documents</li>
 </ul>
-</section><section id="weitere-beispiele" class="slide level2">
-<h2>Weitere Beispiele</h2>
+</section><section id="further-examples" class="slide level2">
+<h2>Further Examples</h2>
 <ul>
 <li><p><a href="https://alistapart.com/d/usingxml/xml_uses_a.html" title="A List Apart: Using XML : Sample XML Document">A List Apart: Using XML : Sample XML Document</a></p></li>
 <li><p><a href="https://msdn.microsoft.com/en-us/library/ms762271(v=vs.85)" title="Sample XML File (books.xml)">Sample XML File (books.xml)</a></p></li>
 </ul>
 </section></section>
-<section><section id="xml-als-text-editieren" class="titleslide slide level1"><h1>XML als Text editieren</h1></section><section id="texteditoren" class="slide level2">
-<h2>Texteditoren</h2>
+<section><section id="editing-xml-as-text" class="titleslide slide level1"><h1>Editing XML as text</h1></section><section id="text-editors" class="slide level2">
+<h2>Text editors</h2>
 <p>Online: <a href="https://www.tutorialspoint.com/online_xml_editor.htm" title="Online XML Editor">Online XML Editor</a></p>
 </section><section id="encoding" class="slide level2">
 <h2>Encoding</h2>
 <ul>
-<li>Darstellung von characters durch bits and bytes</li>
-<li>ASCII and friens: 1 character - 1 bit</li>
-<li>Unicode: 1 Zahlenwert pro Character in jedem Schriftsystem</li>
-<li>Unicode-Encodings: Umsetzung der Zahlenwerte in Bytes</li>
+<li>Representation of characters by bits and bytes</li>
+<li>ASCII and friends: 1 character - 1 bit</li>
+<li>Unicode: 1 nuber per every Character in in every writing system</li>
+<li>Unicode Encodings: Translation of these numbers into bytes</li>
 </ul>
 </section><section id="syntax-highlighting" class="slide level2">
 <h2>Syntax Highlighting</h2>
-</section><section id="validierende-editoren" class="slide level2">
-<h2>Validierende Editoren</h2>
+</section><section id="validating-editors" class="slide level2">
+<h2>Validating Editors</h2>
 <figure>
-<img src="pics/nxmlmode-completion.png" alt="Completion mit dem nxml-mode des Emacs" style="width:80.0%" /><figcaption>Completion mit dem nxml-mode des Emacs</figcaption>
+<img src="pics/nxmlmode-completion.png" alt="Completion with the Emacs nxml-mode" style="width:80.0%" /><figcaption>Completion with the Emacs nxml-mode</figcaption>
 </figure>
 <p>(Befehl: <code>C-M-i</code>)</p>
 </section><section id="online-tools" class="slide level2">
@@ -409,7 +421,27 @@ tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<
 <p><a href="https://www.liquid-technologies.com/online-relaxng-validator" title="Free Online XML Validator (RelaxNG)">Free Online XML Validator (RelaxNG)</a></p>
 <p><a href="http://www.utilities-online.info/xsltransformation/#.WenPLRN-qRs" title="XSLT (eXtensible Stylesheet Language Transformations) online transformations">XSLT (eXtensible Stylesheet Language Transformations) online transformations</a></p>
 </section></section>
-<section><section id="material" class="titleslide slide level1"><h1>Material</h1></section><section id="svg" class="slide level2">
+<section><section id="material" class="titleslide slide level1"><h1>Material</h1></section><section id="xml" class="slide level2">
+<h2>XML</h2>
+<ul>
+<li><a href="http://wiki.selfhtml.org/wiki/XML">XML – SELFHTML-Wiki</a></li>
+<li><a href="http://www.tei-c.org/release/doc/tei-p5-doc/de/html/SG.html">A Gentle Introduction to XML - The TEI Guidelines</a></li>
+<li><a href="https://www.teialehrbuch.de/Kostenlose-Kurse/XML-Grundlagen/">XML - Grundlagen - TEIA AG</a></li>
+<li><a href="https://www.xml.com/">XML.com</a></li>
+</ul>
+</section><section id="xhtmlxml-syntax-for-html" class="slide level2">
+<h2>XHTML/XML Syntax for HTML</h2>
+<ul>
+<li><a href="https://wiki.selfhtml.org/wiki/HTML/Unterschiede_von_HTML_zu_XHTML">HTML/Unterschiede von HTML zu XHTML – SELFHTML-Wiki</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/xhtml.html">HTML Standard</a></li>
+</ul>
+</section><section id="rdfa" class="slide level2">
+<h2>RDFa</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/RDFa">RDFa - Wikipedia</a></li>
+<li><a href="https://www.w3.org/TR/rdfa-primer/">RDFa 1.1 Primer - Third Edition</a></li>
+</ul>
+</section><section id="svg" class="slide level2">
 <h2>SVG</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Introduction">Introduction - SVG: Scalable Vector Graphics | MDN</a></li>

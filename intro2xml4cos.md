@@ -15,8 +15,7 @@
 - Component Content Management Systems
 - Content Strategy and Enterprise Content Management
 
-# XML is 20
-
+# "XML is 20"
 
 ---
 
@@ -55,28 +54,33 @@ Tim Bray: [XML is 20](https://www.xml.com/articles/2018/02/10/xml-20/)
 
 ---
 
+- General topic: Formats for structured information
+- Alternatives: XML, HTML, JSON, YAML ... (and mixtures)
+- In this course we will focus on the formats
+
+---
 
 
-# Was ist XML?
+# What is XML?
 
 ## XML-Basics
 - XML: Extensible Markup Language
-- Weiterentwicklung von [SGML](https://www.w3.org/MarkUp/SGML/ "Overview of SGML Resources")
-- Lange als Alternative zu HTML verstanden
-- Syntax für XML-Vokabulare (Metasprache)
+- Buidling on [SGML](https://www.w3.org/MarkUp/SGML/ "Overview of SGML Resources")
+- Often understood as an alternative to HTML
+- Syntax for XML-Vocabularies (Metalanguage)
 - [W3C-Standard](https://www.w3.org/standards/xml/ "XML Technology - W3C")
 - Basis für eine Familie von weiteren Standards und Technologien
 
 
-## Spezifikationen
-- Aktuelle Spezifikation: [Extensible Markup Language (XML) 1.0 (Fifth Edition)](https://www.w3.org/TR/xml/ "Extensible Markup Language (XML) 1.0 (Fifth Edition)")[@paoli2008]
-- Viele weitere Spezifikationen
+## Specifications
+- Most recent specification: [Extensible Markup Language (XML) 1.0 (Fifth Edition)](https://www.w3.org/TR/xml/ "Extensible Markup Language (XML) 1.0 (Fifth Edition)")[@paoli2008]
+- Many other specifications
 
 
 ## Einsatzbereiche
 
-- Publishing und Management von Dokumenten:  Inhaltliches Strukturieren und flexible Darstellung
-- Web-Services. Austauschformaten für die verteilte Bearbeitung im Internet.
+- Publishing and management of documents: Structuring of the content and flexible representatiob 
+- Web-Services. Exchange format for the distributed processing of documents
 
 
 ## Dokumentorientierung und Datenorientierung
@@ -107,7 +111,7 @@ XML-Parser stellen die Verarbeitung ein, sobald ein Dokument nicht wohlgeformt i
 - Wichtige Form der Verarbeitung: Transformation mit XSLT (Beispiel: [Free Online XSL Transformer (XSLT)](http://www.freeformatter.com/xsl-transformer.html "Free Online XSL Transformer (XSLT) - FreeFormatter.com"))
 
 ## Unterschiede XML und HTML
-- XML ist case-sensitive, HTML nicht
+- XML is case-sensitive, HTML not
 - XML-Elemente müssen geschlossen sein, HTML-Elemente nicht
 - XML-Attribute müssen einen Namen und einen Wert haben
 - Die Dokumenttyp-Deklaration unterscheidet sich, siehe https://www.w3.org/QA/2002/04/valid-dtd-list.html
@@ -146,26 +150,25 @@ Scalable Vector Graphics SVG (https://www.w3.org/Graphics/SVG/)
 </svg>
 ```
 
-## XML-Vokabulare für strukturierte Dokumentation
-
+## XML vocabularies for structures documentation
 - DocBook (<http://www.docbook.org/>) und DITA (<http://dita.xml.org/>) sind  wichtige Formate für das Single Source Publishing
 - DocBook wurde als buchorientierter Dokumenttyp entwickelt
 - DITA ist eine Topic-orientierte Alternative, die sich am Prinzip des didaktischen Minimalismus orientiert
 
-## Office-Formate
+## XML for office documents
 - Microsoft Office und Libre Office/Open Office verwenden XML als natives Format
 - Office Open XML ist ein (umstrittener) ECMA-Standard (<http://www.ecma-international.org/publications/standards/Ecma-376.htm>)
 - Das Open Document Format (<https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office>) ist XML basiert und ein OASIS-Standard
 - Libre Office unterstützt auch DocBook
 
-## Entwicklung der Markup-Sprachen
+## History of markup languages
 - Basis: SGML, bereits seit den 1960er Jahren entwickelt
 - HTML wurde als SGML-Anwendung entwickelt
 - XML entstand in den 1990er Jahren als Alternative zu HTML und vereinfachte Version von SGML
 - HTML5 setzte sich gegen XHTML als lebender HTML-Standard durch.
 - Parallel etablierte sich JSON als einfaches Format für den Datenaustausch im Web
 
-## Transformation und Präsentation von XML
+## Transformation and presentation of XML
 - XML erlaubt eine strikte Trennung von Inhalt und Präsentation
 - XML-Dokumente werden meist mit XSLT in andere XML-Vokabulare oder HTML überführt
 - XSLT ist eine funktionale Programmiersprache, die die XML-Syntax verwendet
@@ -184,21 +187,21 @@ Für die seitenorientierte Ausgabe wurde XSL-FO entwickelt
 - Mit RDFa können RDF-Daten in HTML-Dokumente eingebettet werden
 - Das von Facebook entwickelte Open Graph Protocol (http://ogp.me/) basiert auf RDFa
 
-## Ressourcen
+## Ressources
 - [Extensible Markup Language (XML)](https://www.w3.org/XML/ "Extensible Markup Language (XML)")
 - [XML.com](https://www.xml.com/ "XML.com")
 - [data2type GmbH: XML-Technologien | Nachschlagewerk](https://www.data2type.de/xml-xslt-xslfo/ "data2type GmbH: XML-Technologien | Nachschlagewerk")
 - [xml \@ZVON.org](http://zvon.org/comp/m/xml.html "xml @ZVON.org")
 
-# XML-Syntax
+# XML syntax
 
-## XML-Syntax
+## XML syntax
 - Spitzklammern unterscheiden Markup und Textinhalt
 - Wichtigste syntaktische Features: Elemente, Attribute, Kommentare
 - Wohlgeformtes XML folgt syntaktischen Regeln: Elemente sind geschlossen und ineinander eingebettet, Attribute haben Werte in Anführungsstrichen, Groß und Kleinschreibung sind bedeutungsunterscheidend
 - Valides XML entspricht einem definierten Dokumenttyp
 
-## Beispiel für ein XML-Dokument
+## Example of an XML document
 
 ```xml
 <?xml version="1.0"?>
@@ -234,7 +237,7 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 - Optional: Angabe des Encoding (der Zeichenkodierung)
 - Optional: Angabe der Referenzierung einer externen Dokumenttyp-Deklaration (DTD)
 
-## Kommentare
+## Comments
 
 ```xml
 <!-- dictionary.xml
@@ -246,7 +249,7 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 - Werden von der XML verarbeitenden Software nicht verwendet
 
 
-## Dokument-Element oder Wurzelelement
+## Dokument element or root elelement
 
 ```xml
 <dictionary>
@@ -259,7 +262,7 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 - Jedes XML-Dokument hat ein und nur ein Wurzelelement
 - Ohne Wurzelelement könnte keine Baumstruktur aufgebaut werden
 
-## Element mit Attribut
+## Element with attribute
 
 ```xml
 <word acronym="true">
@@ -274,7 +277,7 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 - Bei Elementen ist die Reihenfolge relevant, bei Attributen nicht
 
 
-## Elemente
+## Elements
 
 ```xml
 <name>XML</name>
@@ -288,15 +291,15 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 - Elementnamen
 - Leere Elememente
 
-## Attribute
+## Attributes
 
 ```xml
 <update date="2002-12-23"/>
 ```
 
-- Attributnamen und Attributwert
-- Werte sind immer in Anführungszeichen eingeschlossen
-- Reihenfolge der Element ist nicht relevant
+- Attribute names and attribute values
+- Values must always be in quotation markes
+- Order of the elements is not relevant
 
 ## Leeres Elemente
 
@@ -304,9 +307,9 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 <update date="2002-12-23"/>
 ```
 
-- Verkürzte Syntax: Schrägstich vor der schließenden Spitzkammer
+- Abbreviated Syntax: Slash before the closing bracket
 
-## Entites
+## Entities
 
 ```xml
 Herong&apos;s Notes">...
@@ -315,11 +318,11 @@ Herong&apos;s Notes">...
 
 ```
 
-- Für Sonderzeichen
-- Zur Darstellung von Zeichen, die sonst als Markup interpretiert würden
+- For special characters
+- For the escaping of characters which would be parsed as markup otherwise
 
 
-## CDATA-Abschnitte
+## CDATA sections
 
 ```xml
 <definition>Reserved symbol in XML to representing the beginning of
@@ -327,11 +330,11 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
   </definition>
 ```
 
-- Für Abschnitte, die nicht als Markup interpretiert werden sollen.
-- Beispiel: HTML innerhalb von RSS-Dokumenten
+- For sections with must not be parsed as markup
+- Exampe: HTML in RSS documents
 
 
-## Weitere Beispiele
+## Further Examples
 
 
 - [A List Apart: Using XML : Sample XML Document](https://alistapart.com/d/usingxml/xml_uses_a.html "A List Apart: Using XML : Sample XML Document")
@@ -339,25 +342,25 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 - [Sample XML File (books.xml)](https://msdn.microsoft.com/en-us/library/ms762271(v=vs.85) "Sample XML File (books.xml)")
 
 
-# XML als Text editieren
+# Editing XML as text 
 
-## Texteditoren
+## Text editors
 
 Online: [Online XML Editor](https://www.tutorialspoint.com/online_xml_editor.htm "Online XML Editor")
 
 ## Encoding
 
-- Darstellung von characters durch bits and bytes
-- ASCII and friens: 1 character - 1 bit
-- Unicode: 1 Zahlenwert pro Character in jedem Schriftsystem
-- Unicode-Encodings: Umsetzung der Zahlenwerte in Bytes
+- Representation of characters by bits and bytes
+- ASCII and friends: 1 character - 1 bit
+- Unicode: 1 nuber per every Character in in every writing system
+- Unicode Encodings: Translation of these numbers into bytes
 
 
 
 ## Syntax Highlighting
 
-## Validierende Editoren
-![Completion mit dem nxml-mode des Emacs](pics/nxmlmode-completion.png){ width=80% }
+## Validating Editors
+![Completion with the Emacs nxml-mode](pics/nxmlmode-completion.png){ width=80% }
 
 (Befehl: `C-M-i`)
 
