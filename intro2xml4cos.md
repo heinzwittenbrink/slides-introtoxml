@@ -1,6 +1,6 @@
 % Einführung in XML
 % Heinz Wittenbrink
-% 2018-06-02
+% 2019-03-26
 
 # Plan
 
@@ -79,7 +79,7 @@ Tim Bray: [XML is 20](https://www.xml.com/articles/2018/02/10/xml-20/)
 
 ## Einsatzbereiche
 
-- Publishing and management of documents: Structuring of the content and flexible representatiob 
+- Publishing and management of documents: Structuring of the content and flexible representatiob
 - Web-Services. Exchange format for the distributed processing of documents
 
 
@@ -342,7 +342,7 @@ tags, like: <![CDATA[<p>Hello world!</p>]]>
 - [Sample XML File (books.xml)](https://msdn.microsoft.com/en-us/library/ms762271(v=vs.85) "Sample XML File (books.xml)")
 
 
-# Editing XML as text 
+# Editing XML as text
 
 ## Text editors
 
