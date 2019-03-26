@@ -4,61 +4,86 @@
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="Heinz Wittenbrink">
-  <meta name="dcterms.date" content="2017-10-21">
+  <meta name="dcterms.date" content="2019-03-26">
   <title>Einführung in XML</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="https://revealjs.com/css/reveal.css">
   <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.line-block{white-space: pre-line;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <style type="text/css">
+a.sourceLine { display: inline-block; min-height: 1.25em; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; }
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+@media screen {
+a.sourceLine::before { text-decoration: underline; color: initial; }
+}
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.bn { color: #40a070; } /* BaseN */
+code span.fl { color: #40a070; } /* Float */
+code span.ch { color: #4070a0; } /* Char */
+code span.st { color: #4070a0; } /* String */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.ot { color: #007020; } /* Other */
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.fu { color: #06287e; } /* Function */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code span.cn { color: #880000; } /* Constant */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.im { } /* Import */
+code span.va { color: #19177c; } /* Variable */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.op { color: #666666; } /* Operator */
+code span.bu { } /* BuiltIn */
+code span.ex { } /* Extension */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.at { color: #7d9029; } /* Attribute */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="https://revealjs.com/css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://heinzwittenbrink.github.io/styles/customizations.css"/>
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://revealjs.com/css/print/pdf.css' : 'https://revealjs.com/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <script src="https://revealjs.com/lib/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 <body>
@@ -68,30 +93,86 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <section>
   <h1 class="title">Einführung in XML</h1>
   <p class="author">Heinz Wittenbrink</p>
-  <p class="date">2017-10-21</p>
+  <p class="date">2019-03-26</p>
 </section>
 
-<section><section id="was-ist-xml" class="titleslide slide level1"><h1>Was ist XML?</h1></section><section id="xml-basics" class="slide level2">
+<section><section id="plan" class="title-slide slide level1"><h1>Plan</h1></section><section id="semester-2" class="slide level2">
+<h2>Semester 2:</h2>
+<ul>
+<li>General understanding of XML</li>
+<li>What do we have to know about XML?</li>
+<li>XML on the Web</li>
+</ul>
+</section><section id="semester-3" class="slide level2">
+<h2>Semester 3:</h2>
+<ul>
+<li>Component Content Management Systems</li>
+<li>Content Strategy and Enterprise Content Management</li>
+</ul>
+</section></section>
+<section><section id="xml-is-20" class="title-slide slide level1"><h1>“XML is 20”</h1></section><section id="section" class="slide level2" data-background="http://gotocon.com/dl/2010/Web/JAOOForside_Pic/forside11.png" data-background-size="contain">
+<h2></h2>
+<p class="rights">
+Source: <a href="http://gotocon.com/aarhus-2010/newstimbray/1">News Tim Bray</a>
+</p>
+</section><section class="slide level2">
+
+<blockquote>
+<p>… The first data format that anyone could pack anything up into, send across the network to anywhere, and unpack on the other end, without asking anyone’s permission or paying for software, or for the receiver to have to pay attention to what the producer thought they’d produced it for or what it meant.</p>
+</blockquote>
+<p>Tim Bray: <a href="https://www.xml.com/articles/2018/02/10/xml-20/">XML is 20</a></p>
+</section><section class="slide level2">
+
+<blockquote>
+<p>These days, nobody in their wildest dreams would consider designing a data format without also shipping open-source software to do something useful with it. But in 2008, it was pretty noteworthy that by February tenth, there were already several open-source parsers available off-the-shelf.</p>
+</blockquote>
+<p>​Tim Bray: <a href="https://www.xml.com/articles/2018/02/10/xml-20/">XML is 20</a></p>
+</section><section class="slide level2">
+
+<blockquote>
+<p>The second thing that mattered was the recognition that documents are data and deserve to be treated with respect, … just like the rows and columns in spreadsheets and databases. Today, serious documents — medical records, the Legislation of the United States of America — live in XML and there’s really no other good choice.</p>
+</blockquote>
+<p>Tim Bray: <a href="https://www.xml.com/articles/2018/02/10/xml-20/">XML is 20</a></p>
+</section><section class="slide level2">
+
+<blockquote>
+<p>Now, the mirror image of that statement is that you can treat data records as documents. People did a lot of that with XML just because there was no other alternative… and in fact we have done better, for weak values of “better”. I wonder if we’ll ever do better still? As the editor of the IETF JSON RFCs, I’m a pessimist.</p>
+</blockquote>
+<p>Tim Bray: <a href="https://www.xml.com/articles/2018/02/10/xml-20/">XML is 20</a></p>
+</section><section class="slide level2">
+
+<p><a href="https://www.predic8.de/xml-json-yaml.htm">XML, JSON und YAML im Vergleich</a></p>
+</section><section class="slide level2">
+
+<ul>
+<li>General topic: Formats for structured information</li>
+<li>Alternatives: XML, HTML, JSON, YAML … (and mixtures)</li>
+<li>In this course we will focus on the formats</li>
+</ul>
+</section><section class="slide level2">
+
+</section></section>
+<section><section id="what-is-xml" class="title-slide slide level1"><h1>What is XML?</h1></section><section id="xml-basics" class="slide level2">
 <h2>XML-Basics</h2>
 <ul>
 <li>XML: Extensible Markup Language</li>
-<li>Weiterentwicklung von <a href="https://www.w3.org/MarkUp/SGML/" title="Overview of SGML Resources">SGML</a></li>
-<li>Lange als Alternative zu HTML verstanden</li>
-<li>Syntax für XML-Vokabulare (Metasprache)</li>
+<li>Buidling on <a href="https://www.w3.org/MarkUp/SGML/" title="Overview of SGML Resources">SGML</a></li>
+<li>Often understood as an alternative to HTML</li>
+<li>Syntax for XML-Vocabularies (Metalanguage)</li>
 <li><a href="https://www.w3.org/standards/xml/" title="XML Technology - W3C">W3C-Standard</a></li>
 <li>Basis für eine Familie von weiteren Standards und Technologien</li>
 </ul>
-</section><section id="spezifikationen" class="slide level2">
-<h2>Spezifikationen</h2>
+</section><section id="specifications" class="slide level2">
+<h2>Specifications</h2>
 <ul>
-<li>Aktuelle Spezifikation: <a href="https://www.w3.org/TR/xml/" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a><span class="citation" data-cites="paoli2008">(Paoli, Bray, Sperberg-McQueen, Yergeau, &amp; Maler, <a href="#/ref-paoli2008">2008</a>)</span></li>
-<li>Viele weitere Spezifikationen</li>
+<li>Most recent specification: <a href="https://www.w3.org/TR/xml/" title="Extensible Markup Language (XML) 1.0 (Fifth Edition)">Extensible Markup Language (XML) 1.0 (Fifth Edition)</a><span class="citation" data-cites="paoli2008">[@paoli2008]</span></li>
+<li>Many other specifications</li>
 </ul>
 </section><section id="einsatzbereiche" class="slide level2">
 <h2>Einsatzbereiche</h2>
 <ul>
-<li>Publishing und Management von Dokumenten: Inhaltliches Strukturieren und flexible Darstellung</li>
-<li>Web-Services. Austauschformaten für die verteilte Bearbeitung im Internet.</li>
+<li>Publishing and management of documents: Structuring of the content and flexible representatiob</li>
+<li>Web-Services. Exchange format for the distributed processing of documents</li>
 </ul>
 </section><section id="dokumentorientierung-und-datenorientierung" class="slide level2">
 <h2>Dokumentorientierung und Datenorientierung</h2>
@@ -127,7 +208,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section><section id="unterschiede-xml-und-html" class="slide level2">
 <h2>Unterschiede XML und HTML</h2>
 <ul>
-<li>XML ist case-sensitive, HTML nicht</li>
+<li>XML is case-sensitive, HTML not</li>
 <li>XML-Elemente müssen geschlossen sein, HTML-Elemente nicht</li>
 <li>XML-Attribute müssen einen Namen und einen Wert haben</li>
 <li>Die Dokumenttyp-Deklaration unterscheidet sich, siehe https://www.w3.org/QA/2002/04/valid-dtd-list.html</li>
@@ -145,40 +226,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </section><section id="beispiel-svg" class="slide level2">
 <h2>Beispiel: SVG</h2>
 <figure>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Beispiel-SVG.svg/800px-Beispiel-SVG.svg.png" alt="SVG-Beispiel aus der Wikipedia" style="width:50.0%" /><figcaption>SVG-Beispiel aus der Wikipedia</figcaption>
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Beispiel-SVG.svg/800px-Beispiel-SVG.svg.png" alt="SVG-Beispiel aus der Wikipedia" style="width:50.0%" /><figcaption>SVG-Beispiel aus der Wikipedia</figcaption>
 </figure>
 </section><section id="svg-quelltext" class="slide level2">
 <h2>SVG-Quelltext:</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;utf-8&quot; <span class="kw">?&gt;</span>
-<span class="dt">&lt;!DOCTYPE </span>svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot;
- &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;<span class="dt">&gt;</span>  
-<span class="kw">&lt;svg</span><span class="ot"> width=</span><span class="st">&quot;400&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="kw">&gt;</span>
- <span class="kw">&lt;title&gt;</span>SVG<span class="kw">&lt;/title&gt;</span>
- <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span><span class="bn">&lt;![CDATA[</span>
-  text {font-size:60px; text-anchor:middle;}
- <span class="bn">]]&gt;</span><span class="kw">&lt;/style&gt;</span>
- <span class="kw">&lt;rect</span><span class="ot"> x=</span><span class="st">&quot;0&quot;</span><span class="ot"> y=</span><span class="st">&quot;0&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="ot"> width=</span><span class="st">&quot;400&quot;</span><span class="ot"> fill=</span><span class="st">&quot;white&quot;</span><span class="ot"> stroke=</span><span class="st">&quot;blue&quot;</span><span class="ot"> stroke-width=</span><span class="st">&quot;100&quot;</span> <span class="kw">/&gt;</span>
- <span class="kw">&lt;rect</span><span class="ot"> x=</span><span class="st">&quot;160&quot;</span><span class="ot"> y=</span><span class="st">&quot;80&quot;</span><span class="ot"> width=</span><span class="st">&quot;80&quot;</span><span class="ot"> height=</span><span class="st">&quot;240&quot;</span><span class="ot"> fill=</span><span class="st">&quot;red&quot;</span> <span class="kw">/&gt;</span>
- <span class="kw">&lt;rect</span><span class="ot"> x=</span><span class="st">&quot;80&quot;</span><span class="ot"> y=</span><span class="st">&quot;160&quot;</span><span class="ot"> width=</span><span class="st">&quot;240&quot;</span><span class="ot"> height=</span><span class="st">&quot;80&quot;</span><span class="ot"> fill=</span><span class="st">&quot;red&quot;</span> <span class="kw">/&gt;</span>
- <span class="kw">&lt;text</span><span class="ot"> x=</span><span class="st">&quot;200&quot;</span><span class="ot"> y=</span><span class="st">&quot;220&quot;</span><span class="kw">&gt;</span>Arzt<span class="kw">&lt;/text&gt;</span>
-<span class="kw">&lt;/svg&gt;</span></code></pre></div>
-</section><section id="xml-vokabulare-für-strukturierte-dokumentation" class="slide level2">
-<h2>XML-Vokabulare für strukturierte Dokumentation</h2>
+<pre class="sourceCode xml" id="cb1"><code class="sourceCode xml"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;utf-8&quot; <span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="dt">&lt;!DOCTYPE </span>svg PUBLIC &quot;-//W3C//DTD SVG 1.1//EN&quot;</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"> &quot;http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd&quot;<span class="dt">&gt;</span>  </a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">&lt;svg</span><span class="ot"> width=</span><span class="st">&quot;400&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="ot"> xmlns=</span><span class="st">&quot;http://www.w3.org/2000/svg&quot;</span> <span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"> <span class="kw">&lt;title&gt;</span>SVG<span class="kw">&lt;/title&gt;</span></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"> <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span><span class="bn">&lt;![CDATA[</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">  text {font-size:60px; text-anchor:middle;}</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"> <span class="bn">]]&gt;</span><span class="kw">&lt;/style&gt;</span></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"> <span class="kw">&lt;rect</span><span class="ot"> x=</span><span class="st">&quot;0&quot;</span><span class="ot"> y=</span><span class="st">&quot;0&quot;</span><span class="ot"> height=</span><span class="st">&quot;400&quot;</span><span class="ot"> width=</span><span class="st">&quot;400&quot;</span><span class="ot"> fill=</span><span class="st">&quot;white&quot;</span><span class="ot"> stroke=</span><span class="st">&quot;blue&quot;</span><span class="ot"> stroke-width=</span><span class="st">&quot;100&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"> <span class="kw">&lt;rect</span><span class="ot"> x=</span><span class="st">&quot;160&quot;</span><span class="ot"> y=</span><span class="st">&quot;80&quot;</span><span class="ot"> width=</span><span class="st">&quot;80&quot;</span><span class="ot"> height=</span><span class="st">&quot;240&quot;</span><span class="ot"> fill=</span><span class="st">&quot;red&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"> <span class="kw">&lt;rect</span><span class="ot"> x=</span><span class="st">&quot;80&quot;</span><span class="ot"> y=</span><span class="st">&quot;160&quot;</span><span class="ot"> width=</span><span class="st">&quot;240&quot;</span><span class="ot"> height=</span><span class="st">&quot;80&quot;</span><span class="ot"> fill=</span><span class="st">&quot;red&quot;</span> <span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb1-12" data-line-number="12"> <span class="kw">&lt;text</span><span class="ot"> x=</span><span class="st">&quot;200&quot;</span><span class="ot"> y=</span><span class="st">&quot;220&quot;</span><span class="kw">&gt;</span>Arzt<span class="kw">&lt;/text&gt;</span></a>
+<a class="sourceLine" id="cb1-13" data-line-number="13"><span class="kw">&lt;/svg&gt;</span></a></code></pre>
+</section><section id="xml-vocabularies-for-structures-documentation" class="slide level2">
+<h2>XML vocabularies for structures documentation</h2>
 <ul>
 <li>DocBook (<a href="http://www.docbook.org/" class="uri">http://www.docbook.org/</a>) und DITA (<a href="http://dita.xml.org/" class="uri">http://dita.xml.org/</a>) sind wichtige Formate für das Single Source Publishing</li>
 <li>DocBook wurde als buchorientierter Dokumenttyp entwickelt</li>
 <li>DITA ist eine Topic-orientierte Alternative, die sich am Prinzip des didaktischen Minimalismus orientiert</li>
 </ul>
-</section><section id="office-formate" class="slide level2">
-<h2>Office-Formate</h2>
+</section><section id="xml-for-office-documents" class="slide level2">
+<h2>XML for office documents</h2>
 <ul>
 <li>Microsoft Office und Libre Office/Open Office verwenden XML als natives Format</li>
 <li>Office Open XML ist ein (umstrittener) ECMA-Standard (<a href="http://www.ecma-international.org/publications/standards/Ecma-376.htm" class="uri">http://www.ecma-international.org/publications/standards/Ecma-376.htm</a>)</li>
 <li>Das Open Document Format (<a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office" class="uri">https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=office</a>) ist XML basiert und ein OASIS-Standard</li>
 <li>Libre Office unterstützt auch DocBook</li>
 </ul>
-</section><section id="entwicklung-der-markup-sprachen" class="slide level2">
-<h2>Entwicklung der Markup-Sprachen</h2>
+</section><section id="history-of-markup-languages" class="slide level2">
+<h2>History of markup languages</h2>
 <ul>
 <li>Basis: SGML, bereits seit den 1960er Jahren entwickelt</li>
 <li>HTML wurde als SGML-Anwendung entwickelt</li>
@@ -186,8 +267,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>HTML5 setzte sich gegen XHTML als lebender HTML-Standard durch.</li>
 <li>Parallel etablierte sich JSON als einfaches Format für den Datenaustausch im Web</li>
 </ul>
-</section><section id="transformation-und-präsentation-von-xml" class="slide level2">
-<h2>Transformation und Präsentation von XML</h2>
+</section><section id="transformation-and-presentation-of-xml" class="slide level2">
+<h2>Transformation and presentation of XML</h2>
 <ul>
 <li>XML erlaubt eine strikte Trennung von Inhalt und Präsentation</li>
 <li>XML-Dokumente werden meist mit XSLT in andere XML-Vokabulare oder HTML überführt</li>
@@ -210,8 +291,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>Mit RDFa können RDF-Daten in HTML-Dokumente eingebettet werden</li>
 <li>Das von Facebook entwickelte Open Graph Protocol (http://ogp.me/) basiert auf RDFa</li>
 </ul>
-</section><section id="ressourcen" class="slide level2">
-<h2>Ressourcen</h2>
+</section><section id="ressources" class="slide level2">
+<h2>Ressources</h2>
 <ul>
 <li><a href="https://www.w3.org/XML/" title="Extensible Markup Language (XML)">Extensible Markup Language (XML)</a></li>
 <li><a href="https://www.xml.com/" title="XML.com">XML.com</a></li>
@@ -219,144 +300,144 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="http://zvon.org/comp/m/xml.html" title="xml @ZVON.org">xml @ZVON.org</a></li>
 </ul>
 </section></section>
-<section><section id="xml-syntax" class="titleslide slide level1"><h1>XML-Syntax</h1></section><section id="xml-syntax-1" class="slide level2">
-<h2>XML-Syntax</h2>
+<section><section id="xml-syntax" class="title-slide slide level1"><h1>XML syntax</h1></section><section id="xml-syntax-1" class="slide level2">
+<h2>XML syntax</h2>
 <ul>
 <li>Spitzklammern unterscheiden Markup und Textinhalt</li>
 <li>Wichtigste syntaktische Features: Elemente, Attribute, Kommentare</li>
 <li>Wohlgeformtes XML folgt syntaktischen Regeln: Elemente sind geschlossen und ineinander eingebettet, Attribute haben Werte in Anführungsstrichen, Groß und Kleinschreibung sind bedeutungsunterscheidend</li>
 <li>Valides XML entspricht einem definierten Dokumenttyp</li>
 </ul>
-</section><section id="beispiel-für-ein-xml-dokument" class="slide level2">
-<h2>Beispiel für ein XML-Dokument</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot;<span class="kw">?&gt;</span>
-<span class="co">&lt;!-- dictionary.xml</span>
-<span class="co"> - Copyright (c) 2014, HerongYang.com, All Rights Reserved.</span>
-<span class="co">--&gt;</span>
-<span class="kw">&lt;dictionary&gt;</span>
- <span class="kw">&lt;word</span><span class="ot"> acronym=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>
-  <span class="kw">&lt;name&gt;</span>XML<span class="kw">&lt;/name&gt;</span>
-  <span class="kw">&lt;definition</span><span class="ot"> reference=</span><span class="st">&quot;Herong</span><span class="dv">&amp;apos;</span><span class="st">s Notes&quot;</span><span class="kw">&gt;</span>eXtensible Markup
-Language.<span class="kw">&lt;/definition&gt;</span>
-  <span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span>
- <span class="kw">&lt;/word&gt;</span>
- <span class="kw">&lt;word</span><span class="ot"> symbol=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>
-  <span class="kw">&lt;name&gt;</span><span class="dv">&amp;lt;</span><span class="kw">&lt;/name&gt;</span>
-  <span class="kw">&lt;definition&gt;</span>Mathematical symbol representing the &quot;less than&quot; logical
-operation, like: 1<span class="dv">&amp;lt;</span>2.<span class="kw">&lt;/definition&gt;</span>
-  <span class="kw">&lt;definition&gt;</span>Reserved symbol in XML to representing the beginning of
-tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<span class="bn">]]&gt;</span>
-  <span class="kw">&lt;/definition&gt;</span>
-<span class="kw">&lt;/word&gt;</span>
-<span class="kw">&lt;/dictionary&gt;</span></code></pre></div>
+</section><section id="example-of-an-xml-document" class="slide level2">
+<h2>Example of an XML document</h2>
+<pre class="sourceCode xml" id="cb2"><code class="sourceCode xml"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">&lt;!-- dictionary.xml</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co"> - Copyright (c) 2014, HerongYang.com, All Rights Reserved.</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">--&gt;</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw">&lt;dictionary&gt;</span></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"> <span class="kw">&lt;word</span><span class="ot"> acronym=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">  <span class="kw">&lt;name&gt;</span>XML<span class="kw">&lt;/name&gt;</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">  <span class="kw">&lt;definition</span><span class="ot"> reference=</span><span class="st">&quot;Herong</span><span class="dv">&amp;apos;</span><span class="st">s Notes&quot;</span><span class="kw">&gt;</span>eXtensible Markup</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">Language.<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">  <span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"> <span class="kw">&lt;/word&gt;</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"> <span class="kw">&lt;word</span><span class="ot"> symbol=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">  <span class="kw">&lt;name&gt;</span><span class="dv">&amp;lt;</span><span class="kw">&lt;/name&gt;</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">  <span class="kw">&lt;definition&gt;</span>Mathematical symbol representing the &quot;less than&quot; logical</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">operation, like: 1<span class="dv">&amp;lt;</span>2.<span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">  <span class="kw">&lt;definition&gt;</span>Reserved symbol in XML to representing the beginning of</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17">tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<span class="bn">]]&gt;</span></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18">  <span class="kw">&lt;/definition&gt;</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="kw">&lt;/word&gt;</span></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="kw">&lt;/dictionary&gt;</span></a></code></pre>
 </section><section id="xml-deklaration" class="slide level2">
 <h2>XML-Deklaration</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;<span class="kw">?&gt;</span></code></pre></div>
+<pre class="sourceCode xml" id="cb3"><code class="sourceCode xml"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;yes&quot;<span class="kw">?&gt;</span></a></code></pre>
 <ul>
 <li>Steht am Beginn eines Dokuments, gibt die XML-Version an.</li>
 <li>Optional: Angabe des Encoding (der Zeichenkodierung)</li>
 <li>Optional: Angabe der Referenzierung einer externen Dokumenttyp-Deklaration (DTD)</li>
 </ul>
-</section><section id="kommentare" class="slide level2">
-<h2>Kommentare</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="co">&lt;!-- dictionary.xml</span>
-<span class="co"> - Copyright (c) 2014, HerongYang.com, All Rights Reserved.</span>
-<span class="co">--&gt;</span></code></pre></div>
+</section><section id="comments" class="slide level2">
+<h2>Comments</h2>
+<pre class="sourceCode xml" id="cb4"><code class="sourceCode xml"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">&lt;!-- dictionary.xml</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co"> - Copyright (c) 2014, HerongYang.com, All Rights Reserved.</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">--&gt;</span></a></code></pre>
 <ul>
 <li>Enthalten Botschaften für menschliche Nutzer</li>
 <li>Werden von der XML verarbeitenden Software nicht verwendet</li>
 </ul>
-</section><section id="dokument-element-oder-wurzelelement" class="slide level2">
-<h2>Dokument-Element oder Wurzelelement</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;dictionary&gt;</span>
-.
-.
-.
-<span class="kw">&lt;/dictionary&gt;</span></code></pre></div>
+</section><section id="dokument-element-or-root-elelement" class="slide level2">
+<h2>Dokument element or root elelement</h2>
+<pre class="sourceCode xml" id="cb5"><code class="sourceCode xml"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">&lt;dictionary&gt;</span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">.</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">.</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">.</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="kw">&lt;/dictionary&gt;</span></a></code></pre>
 <ul>
 <li>Jedes XML-Dokument hat ein und nur ein Wurzelelement</li>
 <li>Ohne Wurzelelement könnte keine Baumstruktur aufgebaut werden</li>
 </ul>
-</section><section id="element-mit-attribut" class="slide level2">
-<h2>Element mit Attribut</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;word</span><span class="ot"> acronym=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span>
-.
-.
-.
-<span class="kw">&lt;/word&gt;</span></code></pre></div>
+</section><section id="element-with-attribute" class="slide level2">
+<h2>Element with attribute</h2>
+<pre class="sourceCode xml" id="cb6"><code class="sourceCode xml"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">&lt;word</span><span class="ot"> acronym=</span><span class="st">&quot;true&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">.</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">.</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">.</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">&lt;/word&gt;</span></a></code></pre>
 <ul>
 <li>Elemente und Attribute sind die wichtigsten syntaktischen Bestandteile von XML-Dokumenten</li>
 <li>Elemente können einen Inhalt haben, Attribute haben einen <em>Wert</em></li>
 <li>Bei Elementen ist die Reihenfolge relevant, bei Attributen nicht</li>
 </ul>
-</section><section id="elemente" class="slide level2">
-<h2>Elemente</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;name&gt;</span>XML<span class="kw">&lt;/name&gt;</span>
-.
-.
-.
-<span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></code></pre></div>
+</section><section id="elements" class="slide level2">
+<h2>Elements</h2>
+<pre class="sourceCode xml" id="cb7"><code class="sourceCode xml"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">&lt;name&gt;</span>XML<span class="kw">&lt;/name&gt;</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">.</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">.</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">.</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></a></code></pre>
 <ul>
 <li>Start und End-Tag</li>
 <li>Elementnamen</li>
 <li>Leere Elememente</li>
 </ul>
-</section><section id="attribute" class="slide level2">
-<h2>Attribute</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></code></pre></div>
+</section><section id="attributes" class="slide level2">
+<h2>Attributes</h2>
+<pre class="sourceCode xml" id="cb8"><code class="sourceCode xml"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></a></code></pre>
 <ul>
-<li>Attributnamen und Attributwert</li>
-<li>Werte sind immer in Anführungszeichen eingeschlossen</li>
-<li>Reihenfolge der Element ist nicht relevant</li>
+<li>Attribute names and attribute values</li>
+<li>Values must always be in quotation markes</li>
+<li>Order of the elements is not relevant</li>
 </ul>
 </section><section id="leeres-elemente" class="slide level2">
 <h2>Leeres Elemente</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></code></pre></div>
+<pre class="sourceCode xml" id="cb9"><code class="sourceCode xml"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">&lt;update</span><span class="ot"> date=</span><span class="st">&quot;2002-12-23&quot;</span><span class="kw">/&gt;</span></a></code></pre>
 <ul>
-<li>Verkürzte Syntax: Schrägstich vor der schließenden Spitzkammer</li>
+<li>Abbreviated Syntax: Slash before the closing bracket</li>
 </ul>
-</section><section id="entites" class="slide level2">
-<h2>Entites</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml">Herong<span class="dv">&amp;apos;</span>s Notes&quot;&gt;...
-
-..., like: 1<span class="dv">&amp;lt;</span>2</code></pre></div>
+</section><section id="entities" class="slide level2">
+<h2>Entities</h2>
+<pre class="sourceCode xml" id="cb10"><code class="sourceCode xml"><a class="sourceLine" id="cb10-1" data-line-number="1">Herong<span class="dv">&amp;apos;</span>s Notes&quot;&gt;...</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3">..., like: 1<span class="dv">&amp;lt;</span>2</a></code></pre>
 <ul>
-<li>Für Sonderzeichen</li>
-<li>Zur Darstellung von Zeichen, die sonst als Markup interpretiert würden</li>
+<li>For special characters</li>
+<li>For the escaping of characters which would be parsed as markup otherwise</li>
 </ul>
-</section><section id="cdata-abschnitte" class="slide level2">
-<h2>CDATA-Abschnitte</h2>
-<div class="sourceCode"><pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;definition&gt;</span>Reserved symbol in XML to representing the beginning of
-tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<span class="bn">]]&gt;</span>
-  <span class="kw">&lt;/definition&gt;</span></code></pre></div>
+</section><section id="cdata-sections" class="slide level2">
+<h2>CDATA sections</h2>
+<pre class="sourceCode xml" id="cb11"><code class="sourceCode xml"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">&lt;definition&gt;</span>Reserved symbol in XML to representing the beginning of</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<span class="bn">]]&gt;</span></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">  <span class="kw">&lt;/definition&gt;</span></a></code></pre>
 <ul>
-<li>Für Abschnitte, die nicht als Markup interpretiert werden sollen.</li>
-<li>Beispiel: HTML innerhalb von RSS-Dokumenten</li>
+<li>For sections with must not be parsed as markup</li>
+<li>Exampe: HTML in RSS documents</li>
 </ul>
-</section><section id="weitere-beispiele" class="slide level2">
-<h2>Weitere Beispiele</h2>
+</section><section id="further-examples" class="slide level2">
+<h2>Further Examples</h2>
 <ul>
 <li><p><a href="https://alistapart.com/d/usingxml/xml_uses_a.html" title="A List Apart: Using XML : Sample XML Document">A List Apart: Using XML : Sample XML Document</a></p></li>
 <li><p><a href="https://msdn.microsoft.com/en-us/library/ms762271(v=vs.85)" title="Sample XML File (books.xml)">Sample XML File (books.xml)</a></p></li>
 </ul>
 </section></section>
-<section><section id="xml-als-text-editieren" class="titleslide slide level1"><h1>XML als Text editieren</h1></section><section id="texteditoren" class="slide level2">
-<h2>Texteditoren</h2>
+<section><section id="editing-xml-as-text" class="title-slide slide level1"><h1>Editing XML as text</h1></section><section id="text-editors" class="slide level2">
+<h2>Text editors</h2>
 <p>Online: <a href="https://www.tutorialspoint.com/online_xml_editor.htm" title="Online XML Editor">Online XML Editor</a></p>
 </section><section id="encoding" class="slide level2">
 <h2>Encoding</h2>
 <ul>
-<li>Darstellung von characters durch bits and bytes</li>
-<li>ASCII and friens: 1 character - 1 bit</li>
-<li>Unicode: 1 Zahlenwert pro Character in jedem Schriftsystem</li>
-<li>Unicode-Encodings: Umsetzung der Zahlenwerte in Bytes</li>
+<li>Representation of characters by bits and bytes</li>
+<li>ASCII and friends: 1 character - 1 bit</li>
+<li>Unicode: 1 nuber per every Character in in every writing system</li>
+<li>Unicode Encodings: Translation of these numbers into bytes</li>
 </ul>
 </section><section id="syntax-highlighting" class="slide level2">
 <h2>Syntax Highlighting</h2>
-</section><section id="validierende-editoren" class="slide level2">
-<h2>Validierende Editoren</h2>
+</section><section id="validating-editors" class="slide level2">
+<h2>Validating Editors</h2>
 <figure>
-<img src="pics/nxmlmode-completion.png" alt="Completion mit dem nxml-mode des Emacs" style="width:80.0%" /><figcaption>Completion mit dem nxml-mode des Emacs</figcaption>
+<img data-src="pics/nxmlmode-completion.png" alt="Completion with the Emacs nxml-mode" style="width:80.0%" /><figcaption>Completion with the Emacs nxml-mode</figcaption>
 </figure>
 <p>(Befehl: <code>C-M-i</code>)</p>
 </section><section id="online-tools" class="slide level2">
@@ -365,31 +446,66 @@ tags, like: <span class="bn">&lt;![CDATA[</span>&lt;p&gt;Hello world!&lt;/p&gt;<
 <p><a href="https://www.liquid-technologies.com/online-relaxng-validator" title="Free Online XML Validator (RelaxNG)">Free Online XML Validator (RelaxNG)</a></p>
 <p><a href="http://www.utilities-online.info/xsltransformation/#.WenPLRN-qRs" title="XSLT (eXtensible Stylesheet Language Transformations) online transformations">XSLT (eXtensible Stylesheet Language Transformations) online transformations</a></p>
 </section></section>
-<section><section id="material" class="titleslide slide level1"><h1>Material</h1></section><section id="literatur" class="slide level2 unnumbered">
+<section><section id="material" class="title-slide slide level1"><h1>Material</h1></section><section id="xml" class="slide level2">
+<h2>XML</h2>
+<ul>
+<li><a href="http://wiki.selfhtml.org/wiki/XML">XML – SELFHTML-Wiki</a></li>
+<li><a href="http://www.tei-c.org/release/doc/tei-p5-doc/de/html/SG.html">A Gentle Introduction to XML - The TEI Guidelines</a></li>
+<li><a href="https://www.teialehrbuch.de/Kostenlose-Kurse/XML-Grundlagen/">XML - Grundlagen - TEIA AG</a></li>
+<li><a href="https://www.xml.com/">XML.com</a></li>
+</ul>
+</section><section id="xhtmlxml-syntax-for-html" class="slide level2">
+<h2>XHTML/XML Syntax for HTML</h2>
+<ul>
+<li><a href="https://wiki.selfhtml.org/wiki/HTML/Unterschiede_von_HTML_zu_XHTML">HTML/Unterschiede von HTML zu XHTML – SELFHTML-Wiki</a></li>
+<li><a href="https://html.spec.whatwg.org/multipage/xhtml.html">HTML Standard</a></li>
+</ul>
+</section><section id="rdfa" class="slide level2">
+<h2>RDFa</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/RDFa">RDFa - Wikipedia</a></li>
+<li><a href="https://www.w3.org/TR/rdfa-primer/">RDFa 1.1 Primer - Third Edition</a></li>
+</ul>
+</section><section id="svg" class="slide level2">
+<h2>SVG</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Introduction">Introduction - SVG: Scalable Vector Graphics | MDN</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial - SVG: Scalable Vector Graphics | MDN</a></li>
+</ul>
+</section><section id="rss" class="slide level2">
+<h2>RSS</h2>
+<ul>
+<li><a href="https://www.wired.com/story/rss-readers-feedly-inoreader-old-reader/">RSS Readers Are Due for a Comeback: Feedly, The Old Reader, Inoreader | WIRED</a></li>
+<li><a href="https://www.data2type.de/xml-xslt-xslfo/newsfeeds-rss-atom/">data2type GmbH: XML-Technologien | Newsfeeds mit RSS und Atom</a></li>
+</ul>
+</section><section id="aiml" class="slide level2">
+<h2>AIML</h2>
+<ul>
+<li><a href="https://pandorabots.com/docs/">About Pandorabots · Pandorabots Documentation</a></li>
+<li><a href="https://docs.google.com/presentation/d/1H-FlxdbgBLLtUvCBcXsWVrIV5baWzMVvuNw2mww0LI4/edit#slide=id.p">Build a Simple Virtual Assistant with AIML 2.0 - Google Slides</a></li>
+</ul>
+</section><section id="literatur" class="slide level2">
 <h2>Literatur</h2>
-<div id="refs" class="references">
-<div id="ref-paoli2008">
-<p>Paoli, J., Bray, T., Sperberg-McQueen, M., Yergeau, F., &amp; Maler, E. (2008). <em>Extensible Markup Language (XML) 1.0 (Fifth Edition)</em> (W3C Recommendation). W3C.</p>
-</div>
-</div>
 </section></section>
     </div>
   </div>
 
-  <script src="reveal.js/lib/js/head.min.js"></script>
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://revealjs.com/lib/js/head.min.js"></script>
+  <script src="https://revealjs.com/js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+          { src: 'https://revealjs.com/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://revealjs.com/plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://revealjs.com/plugin/notes/notes.js', async: true }
         ]
       });
     </script>
